@@ -13,6 +13,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag node-with-awscli:$(date +%s)
+      - name: Docker Build & Push to Docker Hub
+        uses: opspresso/action-docker@master
+        with:
+          args: --docker
+        env:
+          USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          PASSWORD: ${{ secrets.DOCKERHUB_ACCESS_KEY }}
+          DOCKERFILE: "Dockerfile"
+          IMAGE_NAME: "manchicken/node-with-awscli"
+          TAG_NAME: "v0.0.1"
+          LATEST: "true"
