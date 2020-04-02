@@ -20,7 +20,6 @@ jobs:
         env:
           USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           PASSWORD: ${{ secrets.DOCKERHUB_ACCESS_KEY }}
-          DOCKERFILE: "Dockerfile"
           IMAGE_NAME: "manchicken/node-with-awscli"
           TAG_NAME: "v0.0.1"
           LATEST: "true"
