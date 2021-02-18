@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:12.20.2
 
 LABEL version="0.1.1"
 RUN apt-get update \
