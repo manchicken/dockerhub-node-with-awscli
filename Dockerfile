@@ -1,6 +1,6 @@
 FROM node:latest
 
-LABEL version="0.1.1"
+LABEL version="0.1.2"
 RUN apt-get update \
   && apt-get install -y awscli git \
   && apt-get -y autoremove \
